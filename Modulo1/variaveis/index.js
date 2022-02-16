@@ -29,20 +29,18 @@ console.log(a, b, c)
 //10, 10, 10
 
 
-/*
-exercício 4
+/* 
+exercício 3
 let p = prompt("Quantas horas você trabalha por dia?")
 let t = prompt("Quanto você recebe por dia?")
 alert(`Voce recebe ${t/p} por hora`)
+
+let horasTrabalhoDia = prompt ("Quantas horas você trabalha por dia?")
+let salario = prompt("Quanto você recebe por dia?")
+alert ("Voce recebe ${salario/horasTrabalhoDia} por hora")
 */
 
-//let horasTrabalhoDia = prompt ("Quantas horas você trabalha por dia?")
-//let salario = prompt("Quanto você recebe por dia?")
-//alert ("Voce recebe ${salario/horasTrabalhoDia} por hora")
-
-/*Exercícios de escrita de código
-1
-*/
+//Exercício de escrita de código 1
 
 let nome
 console.log (typeof nome)
@@ -60,3 +58,17 @@ como mensagem popup com área para resposta,
 as perguntas "Qual é o seu nome?" e "Qual é a sua idade?", respectivamente.*/
 
 console.log("Olá", nomeUsuario,", você tem", idadeUsuario, "anos.");
+
+//Exercício de escrita de código 2
+
+let perguntaUm = prompt("Sua roupa é preta?")
+let perguntaDois = prompt("Seu olho é verde?")
+let perguntaTres = prompt("Você pinta quadros?")
+
+let respostaUm = prompt(perguntaUm)
+let respostaDois = prompt(perguntaDois)
+let respostaTres = prompt(perguntaTres)
+
+console.log(perguntaUm, respostaUm)
+console.log(perguntaDois, respostaDois)
+console.log(perguntaTres, respostaTres)
