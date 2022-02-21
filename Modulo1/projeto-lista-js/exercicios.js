@@ -18,14 +18,16 @@ function imprimeMensagem() {
 
 // EXERCÍCIO 01
 function calculaAreaRetangulo(altura, largura) {
- const areaRetangulo = altura * largura
- //return areaRetangulo
+ const areaRetangulo = altura*largura
 
- console.log(`A área é ${areaRetangulo} cm²`)
+ console.log(areaRetangulo)
+
+ return areaRetangulo
+
 }
+
 calculaAreaRetangulo(3, 5)
 calculaAreaRetangulo(2, 6)
-
 
 // EXERCÍCIO 02
 function imprimeIdade() {
@@ -46,51 +48,68 @@ calculaIMC(70, 1.65)
 
 // EXERCÍCIO 04
 function imprimeInformacoesUsuario() {
-  // implemente sua lógica aqui
-  // "Meu nome é NOME, tenho IDADE anos, e o meu email é EMAIL."
+  const nome = prompt("Qual seu nome?")
+  const idade = prompt("Qual sua idade?")
+  const email = prompt("Qual seu email?")
 
+  console.log(`Meu nome é ${nome}, tenho ${idade} anos, e o meu email é ${email}.`)
+  
 }
 
 // EXERCÍCIO 05
 function imprimeTresCoresFavoritas() {
-  // implemente sua lógica aqui
+  const corUm = prompt("Qual sua cor favorita?")
+  const corDois = prompt("Escolha outra cor.")
+  const corTres = prompt("Escolha uma terceira cor.")
+  const listaCores = [corUm, corDois, corTres]
+
+  console.log(listaCores)
 
 }
 
 // EXERCÍCIO 06
 function retornaStringEmMaiuscula(string) {
-  // implemente sua lógica aqui
+  const stringMaiuscula = string.toUpperCase()
+  return stringMaiuscula
 
 }
 
 // EXERCÍCIO 07
 function calculaIngressosEspetaculo(custo, valorIngresso) {
-  // implemente sua lógica aqui
+  const retorno = custo/valorIngresso
+  return retorno
 
 }
 
 // EXERCÍCIO 08
 function checaStringsMesmoTamanho(string1, string2) {
-  // implemente sua lógica aqui
+  const tamanho = string1 >= string2
+  return tamanho
 
 }
 
 // EXERCÍCIO 09
 function retornaPrimeiroElemento(array) {
-  // implemente sua lógica aqui
+  const primeiroElemento = array[0]
+  return primeiroElemento
 
 }
 
 // EXERCÍCIO 10
 function retornaUltimoElemento(array) {
-  // implemente sua lógica aqui
+  //const tamanhoArray = array.lenght()
+  const ultimoElemento = array.pop()
+  return ultimoElemento
 
 }
 
 // EXERCÍCIO 11
 function trocaPrimeiroEUltimo(array) {
-  // implemente sua lógica aqui
-
+  //const primeiroElemento = array[0]
+  const ultimoElemento = array.pop()
+  const troca = array.replaceAll([0], ultimoElemento)
+  return troca
+ 
 }
 
 // EXERCÍCIO 12
