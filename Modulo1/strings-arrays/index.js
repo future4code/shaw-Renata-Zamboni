@@ -104,3 +104,4 @@ const perguntaTres = prompt("Qual sua principal tarefa a noite?")
 listaDeTarefas.push(perguntaUm , perguntaDois , perguntaTres)
 //c
 console.log(listaDeTarefas)
+
