@@ -1,0 +1,90 @@
+#HTML{
+    font-family: Courier, "Lucida Console", monospace;
+}
+
+header{
+    background-color: dimgray;
+    position:static;
+    height: 45px;
+
+    
+}
+
+.logo{
+    width: 35px;
+    margin: 10px;
+}
+
+#menu{
+    color:aliceblue;
+    text-align:left;
+    font-size:medium;
+    margin:0%;
+    height: px;
+           
+    
+}
+
+.nome-bem-vindo{
+    color:aliceblue;
+    text-align: center;
+    font-size: small; 
+    margin:0%   
+    
+}
+
+.sobre-mim{
+    background-color: rgb(80, 80, 80);
+    color:aliceblue;
+
+}
+
+.habilidades{
+    background-color: rgb(80, 80, 80);
+    color:aliceblue;
+
+}
+
+#logoJS{
+    width: 40px;
+}
+
+#logoHTML{
+    width: 40px;
+}
+
+#logoCSS{
+    width: 40px;
+}
+
+.projetos{
+    background-color: rgb(80, 80, 80);
+    color:aliceblue;
+}
+
+.contato{
+    background-color: rgb(80, 80, 80);
+    color:aliceblue;
+}
+
+#nome{
+
+}
+#email{
+
+}
+#mensagem{
+
+}
+
+.redes-sociais{
+    background-color: rgb(80, 80, 80);
+    color:aliceblue;
+    
+}
+
+footer{
+    background-color:rgb(21, 145, 202);
+    color:aliceblue;
+    position:static;
+}
