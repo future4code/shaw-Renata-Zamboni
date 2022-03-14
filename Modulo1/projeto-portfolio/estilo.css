@@ -79,7 +79,7 @@ header{
 
 }
 
-.terminal-social{
+.terminal-social:link{
     color:rgb(219, 218, 218);
     text-decoration:none;
     margin:10px;
@@ -132,7 +132,7 @@ footer{
     height: 25px;
     border:1px;
     position:relative;
-    position:bottom;
+    bottom:0%;
     
 }
 
@@ -141,5 +141,6 @@ footer{
     color:aliceblue; 
     padding: 5px;
     float:inline-end;
+    text-align: right;
             
 }
