@@ -9,20 +9,20 @@ function checarDesigualdade(a, b) {
 
     return `No comparador de desigualdade ${a}!==${b} é ${a !== b}`
 }
-console.log(checarDesigualdade(1, 3));
+//console.log(checarDesigualdade(1, 3));
 
 // b-)Compare a igualdade entre a===b
 
 function checarIgualdade(a, b) {
     return `No comparador de igualdade ${a}===${b} é ${a===b}`
 }
-console.log(checarIgualdade(1, 3));
+//console.log(checarIgualdade(1, 3));
 
 // c-)Faça uma função chamada "verificaSeEMaior"
 function verificaSeEMaior(a,b){
     return `${a} é maior que ${b}? ${a>b}`
 }
-console.log(verificaSeEMaior(321, 2156));
+//console.log(verificaSeEMaior(321, 2156));
 
 
 // Exercício 2------------------------------------------------------------------------------------
@@ -38,7 +38,6 @@ console.log(verificaSeEMaior(321, 2156));
 // CONDICIONAIS
 
 // Exercício 3------------------------------------------------------------------------------------
-/*
 const cadastro = () => {
     const usuario = []
 
@@ -66,13 +65,13 @@ const cadastro = () => {
    return usuario
 }
 
-console.log(cadastro());*/
+//console.log(cadastro());
 
 // Exercício 4-----------------------------------------------------------------------------------------------
-/*const login = () => {
+const login = () => {
     const login = "labenu"
     
-    const senhaUsuario = prompt("Digite sua senha")
+    //const senhaUsuario = prompt("Digite sua senha")
 
     if(senhaUsuario === login){
             return "Usuário Logado"
@@ -82,37 +81,23 @@ console.log(cadastro());*/
     
 }
 
-console.log(login());*/
+//console.log(login())
 
 // Exercício 5----------------------------------------------------------------------------------------------------
-/*
-let tempo = [
-        {nome: "Coronavac", dias: 28},
-        {nome: "Astrazenica", dias: 90},
-        {nome: "Pfizer", dias: 90}
-    ]
-
-    let data = ?
-    if(vacina.toLowerCase === "Coronavac"){
-        return tempo = "28", data ="01/08/2021"
-    }else if(vacina.toLowerCase === "Astrazenica"){
-        return tempo = "90", data = "20/09/2021"
-    }else if(vacina.toLowerCase === "Pfizer"){
-        return tempo = "90", data = "20/09/2021"
-    }
-*/
+const nomeVacinado = prompt("Digite seu nome")
+const vacina = prompt("Qual vacina você tomou?")
+let data = ""
+let tempo = ""
 
 const primeiraDose = () => {
-    const nomeVacinado = prompt("Digite seu nome")
-    const vacina = prompt("Qual vacina você tomou?")
-        
+          
      
-    if(vacina.toLowerCase === "Coronavac"){
-        return `Olá, ${nomeVacinado}! A próxima dose da ${vacina} é daqui a 28 dias. Compareça no posto em 01/08/2021.`
+    if(vacina === "Coronavac"){
+        return `Olá, ${nomeVacinado}! A próxima dose da ${vacina} é daqui a ${tempo = "28"} dias. Compareça no posto em ${data = "01/08/2021"}.`
     } else if(vacina === "Astrezenica"){
-        return `Olá ${nomeVacinado}! A próxima dose da ${vacina} é daqui a 90 dias. Compareça no posto em 20/09/2021.`
+        return `Olá ${nomeVacinado}! A próxima dose da ${vacina} é daqui a ${tempo = "90"} dias. Compareça no posto em ${data = "20/10/2021"}.`
     }else if(vacina === "Pfizer"){
-        return `Olá ${nomeVacinado}! A próxima dose da ${vacina} é daqui a 90 dias. Compareça no posto em 20/09/2021.`
+        return `Olá ${nomeVacinado}! A próxima dose da ${vacina} é daqui a ${tempo = "90"} dias. Compareça no posto em ${data = "20/10/2021"}.`
     }
     
 }
@@ -129,7 +114,13 @@ const segundaDose = (nomeDoUsuario) => {
         { nome: "Carlos", imunizacao: "incompleta" }
     ]
 
-    //  Sua lógica aqui
+    for(let usuario of usuarios){
+        if(usuario.nome===nomeDoUsuario){
+            usuario.imunizacao ="completa"
+        }
+
+    }
+    return usuarios
 
 
 }
@@ -144,12 +135,18 @@ const avisoAosAtrasados = () => {
         { nome: "Carlos", imunizacao: "incompleta" }
     ]
 
-    //  Sua lógica aqui
+    for(let usuario of usuarios){
+        if(usuario.imunizacao === "incompleta"){
+            console.log(`Olá, ${usuario.nome}! Sua imunização está ${usuario.imunizacao}, por favor volte ao postinho para tomar a segunda dose.`)
 
+            //Pq usando return no lugar de console.log só imprime o Artur e usando o console.log imprime a lista toda e não só os com vacinação incompleta? E pq com console.log abaixo do if o "console.log(avisoAosAtrasados());" aparece como undefined? 
+        }
+    }
+    
 }
 console.log(avisoAosAtrasados());
 
-
+/*
 // DESAFIO------------------------------------------------------------------------------------------
 
 const usuarios = [
@@ -202,4 +199,4 @@ console.log(segundaDoseDesafio("ALGUM NOME AQUI"));
 const avisoAosAtrasadosDesafio = () => {
     //  Sua lógica aqui
 }
-console.log(avisoAosAtrasadosDesafio());
+//console.log(avisoAosAtrasadosDesafio());*/
