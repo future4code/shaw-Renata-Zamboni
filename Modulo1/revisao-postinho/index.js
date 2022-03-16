@@ -38,7 +38,7 @@ console.log(verificaSeEMaior(321, 2156));
 // CONDICIONAIS
 
 // Exercício 3------------------------------------------------------------------------------------
-
+/*
 const cadastro = () => {
     const usuario = []
 
@@ -49,43 +49,74 @@ const cadastro = () => {
     let idadeUsuario = 2022 - anoDeNascimento
 
     const usuarioCadastrado = {
-        Nome: nomeDoUsuario,
-        Idade: idadeUsuario,
-        Nacionalidade: nacionalidade,
-        Senha: senhaDoUsuario,
-    }       
-     
-   if(idadeUsuario >=18 && senhaDoUsuario.length >=6 && nacionalidade.toLowerCase === "brasileira"||"brasileiro"){
+        nome: nomeDoUsuario,
+        idade: idadeUsuario,
+        nacionalidade: nacionalidade.toLowerCase(),
+        senha: senhaDoUsuario,
+    }
+    
+    usuario.push(usuarioCadastrado)
+                  
+   if(idadeUsuario >=18 && usuarioCadastrado.nacionalidade === "brasileira" && senhaDoUsuario.length >=6){
         console.log("Você pode se cadastrar")
     } else{
         console.log("Você não cumpre com os requisitos de cadastro")
     }
-
-    return usuario.push(usuarioCadastrado)   
+   
+   return usuario
 }
 
-console.log(cadastro());
+console.log(cadastro());*/
 
 // Exercício 4-----------------------------------------------------------------------------------------------
-
-const login = () => {
+/*const login = () => {
     const login = "labenu"
-    //  Sua lógica aqui
+    
+    const senhaUsuario = prompt("Digite sua senha")
 
+    if(senhaUsuario === login){
+            return "Usuário Logado"
+        }else{
+            return "Senha inválida"
+        } 
+    
 }
 
-console.log(login());
+console.log(login());*/
 
 // Exercício 5----------------------------------------------------------------------------------------------------
+/*
+let tempo = [
+        {nome: "Coronavac", dias: 28},
+        {nome: "Astrazenica", dias: 90},
+        {nome: "Pfizer", dias: 90}
+    ]
+
+    let data = ?
+    if(vacina.toLowerCase === "Coronavac"){
+        return tempo = "28", data ="01/08/2021"
+    }else if(vacina.toLowerCase === "Astrazenica"){
+        return tempo = "90", data = "20/09/2021"
+    }else if(vacina.toLowerCase === "Pfizer"){
+        return tempo = "90", data = "20/09/2021"
+    }
+*/
 
 const primeiraDose = () => {
-
-    //  Sua lógica aqui
-
-
+    const nomeVacinado = prompt("Digite seu nome")
+    const vacina = prompt("Qual vacina você tomou?")
+        
+     
+    if(vacina.toLowerCase === "Coronavac"){
+        return `Olá, ${nomeVacinado}! A próxima dose da ${vacina} é daqui a 28 dias. Compareça no posto em 01/08/2021.`
+    } else if(vacina === "Astrezenica"){
+        return `Olá ${nomeVacinado}! A próxima dose da ${vacina} é daqui a 90 dias. Compareça no posto em 20/09/2021.`
+    }else if(vacina === "Pfizer"){
+        return `Olá ${nomeVacinado}! A próxima dose da ${vacina} é daqui a 90 dias. Compareça no posto em 20/09/2021.`
+    }
+    
 }
 console.log(primeiraDose())
-
 
 // LOOP+CONDICIONAL
 
