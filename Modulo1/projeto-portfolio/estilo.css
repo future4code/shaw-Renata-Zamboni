@@ -1,0 +1,146 @@
+#HTML{
+    font-family: Courier, "Lucida Console", monospace;
+}
+
+header{
+    background-color: dimgray;
+    position:static;
+    height: 35px;
+    display:flex;
+    
+}
+
+.logo{
+    width: 20px;
+    height: 20px;
+    margin: 8px;  
+}
+
+.menu{
+    color:rgb(219, 218, 218);
+    text-align:left;
+    text-decoration:none;
+    text-emphasis-color: white;
+    font-size:15px;
+    font-weight:500;
+    margin:5px;
+    height:20px;
+    position:static;
+    width:50px;
+}
+
+.menu:hover{
+    background-color: darkgrey;
+    padding: 8px;
+    position: static;
+}
+
+#barra-navegação{
+    margin:8px;
+}
+
+.nome-bem-vindo{
+    color:whitesmoke;
+    text-align:center;
+    font-size:12px; 
+    margin:12px;
+    position: static;
+    padding-left: 90px;
+}
+
+.sobre-mim{
+    background-color: rgb(80, 80, 80);
+    color:aliceblue;
+    float:right;
+    width:1000px;
+    height: 500px;
+    border: rgb(29, 29, 29);
+    border:1px;
+    border-style: solid;
+}
+
+.texto-sobre-mim{
+    margin-left:40px;
+    margin-top: 70px;
+    margin-right:100px;
+       
+
+}
+
+#redes-sociais{
+    background-color: rgb(80, 80, 80);
+    color:aliceblue;
+    padding:0px;
+    display:flex;
+    height: 150px;
+    float:right;
+    width: 1000px;
+    border-top: aliceblue, 1px;   
+
+}
+
+.terminal-social:link{
+    color:rgb(219, 218, 218);
+    text-decoration:none;
+    margin:10px;
+        
+}
+
+.fake-terminal-path{    
+
+}
+
+.habilidades{
+    background-color: rgb(80, 80, 80);
+    color:aliceblue;
+}
+
+#logoJS{
+    width: 40px;
+}
+
+#logoHTML{
+    width: 40px;
+}
+
+#logoCSS{
+    width: 40px;
+}
+
+.projetos{
+    background-color: rgb(80, 80, 80);
+    color:aliceblue;
+}
+
+.contato{
+    background-color: rgb(80, 80, 80);
+    color:aliceblue;
+}
+
+#nome{
+
+}
+#email{
+
+}
+#mensagem{
+
+}
+
+footer{
+    background-color:rgb(21, 145, 202);
+    height: 25px;
+    border:1px;
+    position:relative;
+    bottom:0%;
+    
+}
+
+.texto-frase-futuro{
+    font-size: 15px;
+    color:aliceblue; 
+    padding: 5px;
+    float:inline-end;
+    text-align: right;
+            
+}
