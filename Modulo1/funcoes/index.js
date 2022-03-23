@@ -35,3 +35,5 @@ a função .includes() mostra se esse texto pode ser encontrado na String.*/
 //Todas as respostas retornam True, pois os caracteres inseridos correspondem ao que é chamado na função.
 
 //Exercícios de escrita de código
+
+

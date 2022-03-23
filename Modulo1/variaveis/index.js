@@ -58,6 +58,7 @@ console.log("Olá", nomeUsuario,", você tem", idadeUsuario, "anos.");
 
 //Exercício de escrita de código 2
 
+
 /*
 
 let perguntaUm = prompt("Sua roupa é preta?")
@@ -74,3 +75,21 @@ console.log(perguntaTres, respostaTres)
 
 Revisar Revisar Revisar
 */
+
+/*
+
+let perguntaUm = prompt("Sua roupa é preta?")
+let perguntaDois = prompt("Seu olho é verde?")
+let perguntaTres = prompt("Você pinta quadros?")
+
+let respostaUm = prompt(perguntaUm)
+let respostaDois = prompt(perguntaDois)
+let respostaTres = prompt(perguntaTres)
+
+console.log(perguntaUm, respostaUm)
+console.log(perguntaDois, respostaDois)
+console.log(perguntaTres, respostaTres)
+
+Revisar Revisar Revisar
+*/
+
