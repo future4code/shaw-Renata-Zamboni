@@ -17,9 +17,7 @@ class App extends React.Component{
       <div>
 
         <h1>Sistema de Cadastro Labenusers</h1>
-        <CadastroUsuario/>
-        
-          
+        <CadastroUsuario/>     
         
        
 
