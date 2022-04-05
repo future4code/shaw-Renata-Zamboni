@@ -1,11 +1,9 @@
 import React from "react";
-import {CadastroUsuario} from "./components/CadastroUsuario";
 import App from "../App";
 
 export class ListaUsuarios extends React.Component{
   
   state={
-    id: "",
     name: ""
   }
   

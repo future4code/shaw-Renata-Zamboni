@@ -5,6 +5,9 @@ import {ListaUsuarios} from "./components/ListaUsuarios";
 class App extends React.Component{
   
   state={
+    id: "",
+    name: "",
+    email:""
 
   }
   
@@ -14,8 +17,9 @@ class App extends React.Component{
       <div>
 
         <h1>Sistema de Cadastro Labenusers</h1>
+        <CadastroUsuario/>
         
-        <CadastroUsuario/>       
+          
         
        
 
