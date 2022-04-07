@@ -1,13 +1,11 @@
 import React from "react";
 import {CadastroUsuario} from "./components/CadastroUsuario";
-import {ListaUsuarios} from "./components/ListaUsuarios";
+import {ListaUsuario} from "./components/ListaUsuario";
 
-class App extends React.Component{
+export default class App extends React.Component{
   
   state={
-    id: "",
-    name: "",
-    email:""
+    telaAtual: "cadastro"
 
   }
   
@@ -27,7 +25,6 @@ class App extends React.Component{
   
 }
 
-export default App;
 
 
 
