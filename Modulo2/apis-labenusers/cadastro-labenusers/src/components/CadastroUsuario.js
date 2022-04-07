@@ -1,6 +1,5 @@
 import React from "react";
 import axios from "axios";
-import App from "../App";
 
 //1. recebe dados do input, nome e email: utilizar a requisição de criar o usuário da API.  post createUser 
 //2. botão enviar responde com alert de sucesso ou erro
@@ -49,6 +48,7 @@ export default class CadastroUsuario extends React.Component{
     })
 
     //axios tem uma sintaxe e pontuação bem maldita
+    //fica dentro da função criada
     //then e catch é tipo um if-else
   }
  
@@ -69,6 +69,9 @@ export default class CadastroUsuario extends React.Component{
         <input placeholder="Digite seu e-mail" type="email" onChange={this.onChangeEmail} value={this.state.email}/><br/>
 
         <br/><button onClick={this.criarUsuario}>Criar Usuário</button>
+
+        <br/><button onClick={this.props.irParaLista}>Índice de usuários</button>
+
 
       </div>
     );

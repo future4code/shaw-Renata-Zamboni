@@ -1,7 +1,5 @@
 import React from "react";
 import axios from "axios";
-import {CadastroUsuario} from "./CadastroUsuario";
-import App from "../App";
 
 export default class ListaUsuario extends React.Component{
 
@@ -40,6 +38,7 @@ export default class ListaUsuario extends React.Component{
 
   apagarUsuario=(id)=>{
     const url =`https://us-central1-labenu-apis.cloudfunctions.net/labenusers/users/${id}`
+    //obviamente era mais simples do que eu tava tentando >.<
     const headers={
       headers: {
         Authorization: "renata-seabra-zamboni-shaw"
@@ -47,33 +46,47 @@ export default class ListaUsuario extends React.Component{
     }
     axios.delete(url, headers)
     .then((resposta)=>{
-      this.setState({usuarios: resposta.data}) 
+      alert("Usuário apagado com sucesso!")
+      this.mostraUsuario() 
 
     })
     .catch((err)=>{
-      alert("Erro. Confira os dados e tente novamente.")
+      alert("Erro. Tente novamente.")
 
     })
+
+    //preciso rever melhor todo esse processo de apagar
 
   }
  
     
   render(){
+
     const listaUsuarios= this.state.usuarios.map((user)=>{
-      return <div key={user.id}>{user.name} <button>Excluir Usuário</button></div>
+      return(
+        <div key={user.id}>
+          {user.name}
+          <button onClick={()=>this.apagarUsuario(user.id)}>Excluir Usuário</button>
+        </div>        
+
+      )
+        
+    }) //ainda não entendi pq essa const+botão ficou aqui e não no retunr debaixo de uma vez...
+    //...pra depois ser chamado assim {listaUsuarios}  de novo. 
       
-    })
-    
     return(
       <div>
         <h2>Lista de Usuários</h2>
-
-        <p>Nome:{listaUsuarios}</p>
-
-        <button>Voltar</button>
-
+        
+        {listaUsuarios}       
+  
+        <button onClick={this.props.irParaCadastro}>Voltar</button>
+  
       </div>
-    );
+    ); 
+      
+       
+   
   }
   
 }
