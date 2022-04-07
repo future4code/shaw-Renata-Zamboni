@@ -80,7 +80,7 @@ export default class ListaUsuario extends React.Component{
         
         {listaUsuarios}       
   
-        <button onClick={this.props.irParaCadastro}>Voltar</button>
+        <button onClick={this.props.paginaCadastro}>Voltar</button>
   
       </div>
     ); 

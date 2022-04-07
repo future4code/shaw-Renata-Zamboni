@@ -68,9 +68,7 @@ export default class CadastroUsuario extends React.Component{
         <lable>E-mail: </lable>
         <input placeholder="Digite seu e-mail" type="email" onChange={this.onChangeEmail} value={this.state.email}/><br/>
 
-        <br/><button onClick={this.criarUsuario}>Criar Usuário</button>
-
-        <br/><button onClick={this.props.irParaLista}>Índice de usuários</button>
+        <br/><button onClick={this.criarUsuario}>Criar Usuário</button>        
 
 
       </div>
