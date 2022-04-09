@@ -4,7 +4,7 @@ import styled from 'styled-components';
 
 
 
-export default class AddMusica extends React.Component{    
+export default class PlaylistTracks extends React.Component{    
     
     
     render(){
