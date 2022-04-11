@@ -1,21 +1,9 @@
 import React from 'react';
 import styled from 'styled-components';
 import axios from 'axios';
-import Playlist from './Paginas/Playlist';
-import PlaylistTracks from './paginas/PlaylistTracks';
-import AddPlaylist from './Paginas/AddPlaylist';
-import AddMusica from './Paginas/AddMusica';
+import Playlist from './paginas/Playlist';
+import AddPlaylist from './paginas/AddPlaylist';
 
-      /* case "Playlist":
-        return <Playlist mudarTela={mudarTela}/>
-      
-        case "AddMusica":
-        return <AddMusica mudarTela={mudarTela}/>
-      
-        case "ListaMusica":
-        return <PlaylistTracks mudarTela={mudarTela}/>
-        
-        */
 
 export default class App extends React.Component{
 
@@ -23,19 +11,16 @@ export default class App extends React.Component{
     telaAtual:"Home"
   }
 
-  mudarTela = (nomeTela)=>{
-    this.setState({telaAtual: nomeTela})
-  }
 
   escolherTelaAtual =()=>{
 
     switch(this.state.telaAtual){
       case "Home":
-        return <App mudarTela={mudarTela}/>
+        return <App/>
       case "AddPlaylist": 
-        return <AddPlaylist mudarTela={mudarTela}/>
+        return <AddPlaylist/>
       default:
-        return <App mudarTela={mudarTela}/>
+        return <App/>
     }
   }
 
@@ -48,7 +33,12 @@ export default class App extends React.Component{
     return (      
 
       <div>
-        {this.escolherTelaAtual()}
+
+        <p>App</p>
+
+        <Playlist/>
+        
+        <button onClick={()=> this.escolherTelaAtual()}>CRIAR PLAYLIST</button>        
        
       </div>
 
