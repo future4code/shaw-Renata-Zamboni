@@ -88,6 +88,7 @@ detalhePlaylist =(id)=>{
   
         <div>
           <h2>PLAYLIST</h2>
+          <PlaylistTracks/>
           {listaDePlaylists}
          
         </div>
