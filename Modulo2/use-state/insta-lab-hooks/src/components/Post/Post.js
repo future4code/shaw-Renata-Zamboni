@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, {useState}  from 'react'
 import { PostContainer, PostHeader, UserPhoto, PostPhoto, PostFooter, CommentContainer } from './styles'
 
 import IconeComContador from '../IconeComContador/IconeComContador'
@@ -19,11 +19,11 @@ const Post = (props) => {
 
   const onClickCurtida = () => {
     if (curtido) {      
-      setCurtido(!curtido),
+      setCurtido(!curtido)
       setNumeroCurtidas(numeroCurtidas - 1)
 
     } else {      
-      setCurtido(!curtido),
+      setCurtido(!curtido)
       setNumeroCurtidas(numeroCurtidas + 1)
     } //se um é pra curtido e outro descurtido pq os dois estão com "!curtido"? Pra "inverter o valor de curtido?" 
   };
