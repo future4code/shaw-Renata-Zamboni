@@ -11,9 +11,10 @@ const IconeContainer = styled.div`
 
 function IconeComContador(props) {
 	return <IconeContainer>
-		<img alt={'Icone'} src={props.iconeCurtida} onClick={props.numeroCurtidas}/>
-		<p>{props.numerComentarios}</p>
-	</IconeContainer>
+		<img alt={'Icone'} src={props.icone} onClick={props.onClickIcone}/>
+		<p>{props.valorContador}</p>
+	</ IconeContainer>
 }
+
 
 export default IconeComContador
