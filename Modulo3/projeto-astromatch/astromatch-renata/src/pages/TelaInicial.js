@@ -1,11 +1,32 @@
 import React, {useState, useEffect} from "react";
 import styled from 'styled-components';
 import axios from "axios";
+import { CardPerfil } from "../components/CardPerfil";
+import { Header } from "../components/Header";
 
-export function TelaInicial() {
+const BotaoLista = styled.div`
+    height: 30px;
+    width: 30px;
+    margin-left: 10px;
+    border-radius: 50%;
+   
+`
+
+export const TelaInicial=(props)=> {
+
   return (
-    <div className="TelaInicial">
+    <TelaInicial>
+
+      <Header>
+        
+        <BotaoLista onClick={()=> props.mudaTela("lista match")}>
+          <img src="src\assets\busca-home.png"/>
+        </BotaoLista>
+
+      </Header>
       
-    </div>
+      <CardPerfil/>
+      
+    </TelaInicial>
   );
 }
