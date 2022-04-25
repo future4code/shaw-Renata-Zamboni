@@ -1,0 +1,67 @@
+As funcionalidades do projeto estão listadas abaixo. Colocamo-nas na ordem de prioridade que vocês devem seguir. Ou seja, só façam a próxima funcionalidade se a anterior já estiver 100% concluída.
+
+API.
+https://documenter.getpostman.com/view/7549981/SztBc8eT?version=latest
+
+
+1. O usuário deve ser capaz de criar uma playlist de músicas. Para isso, ele só precisa passar um nome. Não podem existir playlists com o mesmo nome.
+
+POST createPlaylist
+url = "https://us-central1-labenu-apis.cloudfunctions.net/labefy/playlists"
+
+headers={
+    Authorization: "renata-seabra-zamboni-shaw"
+}
+
+body={
+    name: "string"
+}
+
+
+2.1 Deve haver a possibilidade do usuário ***visualizar todas as suas playlists***, em uma lista específica. 2.2. Nesta lista, o usuário também pode deletar alguma playlist.
+
+2.1 GET getAllPlaylists
+url = "https://us-central1-labenu-apis.cloudfunctions.net/labefy/playlists"
+
+headers={
+    Authorization: "renata-seabra-zamboni-shaw"
+}
+
+2.2 DEL deletePlaylist
+
+url ="https://us-central1-labenu-apis.cloudfunctions.net/labefy/playlists/:playlistId"
+
+headers={
+    Authorization: "renata-seabra-zamboni-shaw"
+}
+
+Path Param (botao de input controlado, com parametro, p. 22 revisão)
+playlistId: id da playlist (obrigatório)
+
+
+3. O usuário deve ser capaz de ***visualizar os detalhes de uma playlist***: o seu nome e as músicas que fazem parte dela.
+
+GET getPlaylistTracks
+
+url ="https://us-central1-labenu-apis.cloudfunctions.net/labefy/playlists/:playlistId/tracks"
+
+headers={
+    Authorization: "renata-seabra-zamboni-shaw"
+}
+
+Path Param
+playlistId: id da playlist (obrigatório)
+
+
+4. Para adicionar músicas à playlist, o usuário deve informar: o nome, os artistas relacionados (que pode ser só um cantor ou uma banda) e um link com o arquivo de áudio correspondente a esta música.
+
+POST addTrackToPlaylist
+url = "https://us-central1-labenu-apis.cloudfunctions.net/labefy/playlists/:playlistId/tracks"
+
+headers={
+     Authorization: "renata-seabra-zamboni-shaw"
+}
+
+5. Por fim, quando o usuário abrir o detalhe da playlist, ele deve ser capaz de ouvir a cada uma das músicas que estiverem inseridas na playlist. Um botão de 'play' e 'pause' é essencial para isto.
+
+getPlaylistTracks + botões
