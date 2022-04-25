@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import axios from "axios";
 import { CardPerfil } from "../components/CardPerfil";
 import { Header } from "../components/Header";
+import {ListaMatch} from '../pages/ListaMatch';
 
 
 const BotaoLista = styled.div`
@@ -49,13 +50,13 @@ export const TelaInicial=(props)=> {
     }
   };
 
-  allComents.map((match) => {
+  allMatches.map((match) => {
     const newListOfMatches = [...allMatches, match];
     setAllMatches(newListOfMatches);
     return (      
       <ListaMatch/>      
     );
-    
+
   });  
 
   
@@ -72,8 +73,7 @@ export const TelaInicial=(props)=> {
       
       <CardPerfil/>
 
-      <PostFooter>
-
+      <div>
         
         <IconeMatch onClick={onClickCurtida}>
           <img src="src/assets/like.png"/>
@@ -84,7 +84,7 @@ export const TelaInicial=(props)=> {
           <img src="src/assets/dislike.png"/>
         </IconeDeuRuim>
        
-      </PostFooter>
+      </div>
       
     </TelaInicial>
   );
