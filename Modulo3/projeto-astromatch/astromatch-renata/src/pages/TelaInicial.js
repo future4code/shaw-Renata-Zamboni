@@ -3,8 +3,7 @@ import styled from 'styled-components';
 import axios from "axios";
 import { CardPerfil } from "../components/CardPerfil";
 import { Header } from "../components/Header";
-import iconeDislike from '../src/assets/dislike.png';
-import iconeLike from '../src/assets/like.png';
+
 
 const BotaoLista = styled.div`
     height: 30px;
@@ -32,6 +31,8 @@ export const TelaInicial=(props)=> {
 
   const [dislike, setDislike]=useState(false);
 
+  const [allMatches, setAllMatches]=useState([]);
+
   const onClickCurtida = () => {
     if (like) {
       setLike(false);      
@@ -48,10 +49,16 @@ export const TelaInicial=(props)=> {
     }
   };
 
-  const iconeLike = like? iconeLike: iconeLike;
+  allComents.map((match) => {
+    const newListOfMatches = [...allMatches, match];
+    setAllMatches(newListOfMatches);
+    return (      
+      <ListaMatch/>      
+    );
+    
+  });  
 
-  const iconeDislike = dislike? iconeDislike: iconeDislike
-
+  
   return (
     <TelaInicial>
 
@@ -67,15 +74,15 @@ export const TelaInicial=(props)=> {
 
       <PostFooter>
 
-        <IconeMatch
-          icone={iconeLike}
-          onClickIcone={onClickCurtida}
-        />
+        
+        <IconeMatch onClick={onClickCurtida}>
+          <img src="src/assets/like.png"/>
+        </IconeMatch>
 
-        <IconeDeuRuim
-          icone={iconeDislike}
-          onClickIcone={onClickDislike}
-        />
+        <IconeDeuRuim>
+          onClick={onClickDislike}
+          <img src="src/assets/dislike.png"/>
+        </IconeDeuRuim>
        
       </PostFooter>
       
