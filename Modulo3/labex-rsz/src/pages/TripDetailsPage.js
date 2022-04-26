@@ -2,7 +2,7 @@ import React, {useState, useEffect} from "react";
 import axios from "axios";
 import styled from "styled-components";
 
-const TripDetailsPage =styled.div`
+const TripDetailsPageBox =styled.div`
 `
 
 
@@ -10,7 +10,7 @@ export function TripDetailsPage() {
 
   return (
 
-    <TripDetailsPage>
+    <TripDetailsPageBox>
 
         <button>Voltar</button>
 
@@ -35,6 +35,6 @@ export function TripDetailsPage() {
             </li> 
         </div>            
      
-    </TripDetailsPage>
+    </TripDetailsPageBox>
   );
 }

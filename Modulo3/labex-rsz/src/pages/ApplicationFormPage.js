@@ -2,7 +2,7 @@ import React, {useState, useEffect} from "react";
 import axios from "axios";
 import styled from "styled-components";
 
-const ApplicationFormPage =styled.div`
+const ApplicationFormPageBox =styled.div`
 `
 
 
@@ -10,7 +10,7 @@ export function ApplicationFormPage() {
 
   return (
 
-    <ApplicationFormPage>
+    <ApplicationFormPageBox>
 
         <button>Voltar</button>
 
@@ -18,19 +18,31 @@ export function ApplicationFormPage() {
 
         <form>
 
-			<label placeholder="Escolha uma viagem">				
+			<label>
+                Escolha uma viagem:
+                <br/>				
 				<select>
 					<option value="">Lista vinda de CreatTripPage</option>						
 				</select>
 			</label>
 
-		</form>
+		</form><br/>
 
-        <input placeholder="Nome"type="text"></input>
-        <input placeholder="Idade" type="text"></input>
-        <input placeholder="Profissão" type="text"></input>
-        <input placeholder="Por que quer fazer essa viagem?" type="text"></input>
+        <input placeholder="Nome"type="text"></input><br/>
+        <br/><input placeholder="Idade" type="text"></input><br/>
+        <br/><input placeholder="Profissão" type="text"></input><br/>
 
+        {/*<br/><input placeholder="Por que quer fazer essa viagem?" type="text"></input><br/>*/}
+        
+        <br/>
+        <form>
+            <label>
+                Qual a motivação para a viagem?      
+                <br/><textarea/>
+            </label>
+        </form>
+
+        <br/>
         <form>
 
             <label placeholder="Em qual país reside">				
@@ -39,11 +51,11 @@ export function ApplicationFormPage() {
                 </select>
             </label>
 
-        </form>
+        </form><br/>
 
-        <button>Enviar Incrição</button>
+        <button>Enviar Inscrição</button>
        
        
-    </ApplicationFormPage>
+    </ApplicationFormPageBox>
   );
 }

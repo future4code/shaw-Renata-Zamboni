@@ -2,7 +2,7 @@ import React, {useState, useEffect} from "react";
 import axios from "axios";
 import styled from "styled-components";
 
-const HomePage =styled.div`
+const HomePageBox =styled.div`
 `
 
 
@@ -10,7 +10,7 @@ export function HomePage() {
 
   return (
 
-    <HomePage>
+    <HomePageBox>
 
       <h1>LabeX</h1>
 
@@ -18,6 +18,6 @@ export function HomePage() {
 
       <button>Login Equipe</button> 
      
-    </HomePage>
+    </HomePageBox>
   );
 }

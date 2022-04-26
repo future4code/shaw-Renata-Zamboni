@@ -2,15 +2,15 @@ import React, {useState, useEffect} from "react";
 import axios from "axios";
 import styled from "styled-components";
 
-const ListaTripsPage =styled.div`
+const ListaTripsPageBox =styled.div`
 `
 
 
-export function ListaTripsPage() {
+export function ListTripsPage() {
 
   return (
 
-    <ListaTripsPage>
+    <ListaTripsPageBox>
 
       <h1>Lista de Viagens</h1>
 
@@ -22,6 +22,6 @@ export function ListaTripsPage() {
         {}
       </li>      
      
-    </ListaTripsPage>
+    </ListaTripsPageBox>
   );
 }

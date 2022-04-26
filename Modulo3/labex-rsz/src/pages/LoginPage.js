@@ -2,7 +2,7 @@ import React, {useState, useEffect} from "react";
 import axios from "axios";
 import styled from "styled-components";
 
-const LoginPage =styled.div`
+const LoginPageBox =styled.div`
 `
 
 
@@ -10,7 +10,7 @@ export function LoginPage() {
 
   return (
 
-    <LoginPage>
+    <LoginPageBox>
 
       <h1>Login</h1>
 
@@ -19,6 +19,6 @@ export function LoginPage() {
 
       <button>Voltar</button>      
      
-    </LoginPage>
+    </LoginPageBox>
   );
 }
