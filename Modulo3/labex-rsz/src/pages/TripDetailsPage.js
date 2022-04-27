@@ -1,18 +1,21 @@
 import React, {useState, useEffect} from "react";
 import axios from "axios";
 import styled from "styled-components";
+import { useNavigate } from "react-router-dom";
+import { goToAdminHomePage } from "../routes/Coordinator";
 
 const TripDetailsPageBox =styled.div`
 `
 
 
 export function TripDetailsPage() {
+    const navigate = useNavigate()
 
   return (
 
     <TripDetailsPageBox>
 
-        <button>Voltar</button>
+        <button onClick={()=> goToAdminHomePage(navigate)}>Voltar</button>
 
         <div className="CardViagem">
         

@@ -1,6 +1,9 @@
 import React, {useState, useEffect} from "react";
 import axios from "axios";
 import styled from "styled-components";
+import { useNavigate } from "react-router-dom";
+import { goToListTripsPage } from "../routes/Coordinator";
+import { goToLoginPage } from "../routes/Coordinator";
 
 const HomePageBox =styled.div`
 `
@@ -8,15 +11,19 @@ const HomePageBox =styled.div`
 
 export function HomePage() {
 
+  const navigate=useNavigate()
+
+ 
+
   return (
 
     <HomePageBox>
 
       <h1>LabeX</h1>
 
-      <button>Ver Viagens</button>
+      <button onClick={()=> goToListTripsPage(navigate)}>Ver Viagens</button>
 
-      <button>Login Equipe</button> 
+      <button onClick={()=> goToLoginPage(navigate)}>Login Equipe</button> 
      
     </HomePageBox>
   );
