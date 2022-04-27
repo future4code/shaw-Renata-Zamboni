@@ -22,16 +22,18 @@ export function ApplicationFormPage() {
 
         <h1>Formulário de inscrição</h1>
 
+        {/*passo 2 - map em get trip*/}
         <form>
 			<label>
                 Escolha uma viagem:
                 <br/>				
 				<select>
-					<option value="">Lista vinda de CreatTripPage</option>						
+					<option value="">Lista vinda de getTrips</option>						
 				</select>
 			</label>
 		</form>
-
+        
+        {/* passo 2.1 - inputs de formulario - post Apply to trip */}
         <br/>
         <input placeholder="Nome"type="text"></input><br/>
         <br/><input placeholder="Idade" type="text"></input><br/>
@@ -46,13 +48,14 @@ export function ApplicationFormPage() {
             </label>
         </form>
 
+        {/*passo 2.2 */}
         <br/>
         <form>
             <label>
                 Em qual país reside?
                 <br/>			
                 <select>
-                    <option value="">Lista de países vinda de...?</option>						
+                    <option value="">Lista de países</option>						
                 </select>
             </label>
         </form>
