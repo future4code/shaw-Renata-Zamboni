@@ -1,12 +1,13 @@
 import React, {useState, useEffect} from "react";
 import axios from "axios";
 import styled from "styled-components";
+
 import { useNavigate } from "react-router-dom";
-import { goBack } from "../routes/Coordinator";
-import { goToApplicationFormPage } from "../routes/Coordinator";
+import { goBack, goToApplicationFormPage } from "../routes/Coordinator";
+
 import { headers, urlBase } from "../constants/Constants";
 
-const ListaTripsPageBox =styled.div`
+const ListTripsPageBox =styled.div`
 `
 
 
@@ -20,18 +21,32 @@ export function ListTripsPage() {
     
     axios.get(`${urlBase}/trips`, headers)
     .then((response)=>{
-      setTripList(response.data.results);
+      setTripList(response.data.trips);
   
     }).catch((err)=>{
       console.log(err);
     })
 
-  },[]) 
+  },[])
+
+  const showList = tripList.map((trip)=>{
+    return(
+        <ul>
+          <li key={trip.id}>
+          <p>{trip.name}</p>
+          <p>{trip.description}</p>
+          <p>{trip.planet}</p>
+          <p>{trip.duration}</p>
+          <p>{trip.date}</p>
+          </li>
+        </ul>
+      );
+  })
   
   
   return (
 
-    <ListaTripsPageBox>
+    <ListTripsPageBox>
 
       <h1>Lista de Viagens</h1>
 
@@ -39,15 +54,8 @@ export function ListTripsPage() {
 
       <button onClick={()=> goToApplicationFormPage(navigate)}>Inscrever-se</button>
 
-      {tripList.map((trip)=>{
-        return(
-            <li>
-              <p>{trip}</p>
-            </li>
-          );
-      })}
-          
+      {showList}          
      
-    </ListaTripsPageBox>
+    </ListTripsPageBox>
   );
 }

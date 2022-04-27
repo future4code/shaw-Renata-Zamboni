@@ -2,8 +2,8 @@ import React, {useState, useEffect} from "react";
 import axios from "axios";
 import styled from "styled-components";
 import { useNavigate } from "react-router-dom";
-import { goToLoginPage } from "../routes/Coordinator";
-import { goToHomePage } from "../routes/Coordinator";
+import { goToLoginPage, goToHomePage } from "../routes/Coordinator";
+
 
 const AdminHomePageBox =styled.div`
 `

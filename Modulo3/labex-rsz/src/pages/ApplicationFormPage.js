@@ -1,6 +1,7 @@
 import React, {useState, useEffect} from "react";
 import axios from "axios";
 import styled from "styled-components";
+
 import {useNavigate} from "react-router-dom";
 import { goBack } from "../routes/Coordinator";
 
@@ -22,7 +23,6 @@ export function ApplicationFormPage() {
         <h1>Formulário de inscrição</h1>
 
         <form>
-
 			<label>
                 Escolha uma viagem:
                 <br/>				
@@ -30,9 +30,9 @@ export function ApplicationFormPage() {
 					<option value="">Lista vinda de CreatTripPage</option>						
 				</select>
 			</label>
+		</form>
 
-		</form><br/>
-
+        <br/>
         <input placeholder="Nome"type="text"></input><br/>
         <br/><input placeholder="Idade" type="text"></input><br/>
         <br/><input placeholder="Profissão" type="text"></input><br/>
@@ -40,22 +40,24 @@ export function ApplicationFormPage() {
         <br/>
         <form>
             <label>
-                Qual a motivação para a viagem?      
-                <br/><textarea/>
+                Qual sua motivação para a viagem?      
+                <br/>
+                <textarea/>
             </label>
         </form>
 
         <br/>
         <form>
-
-            <label placeholder="Em qual país reside">				
+            <label>
+                Em qual país reside?
+                <br/>			
                 <select>
                     <option value="">Lista de países vinda de...?</option>						
                 </select>
             </label>
+        </form>
 
-        </form><br/>
-
+        <br/>
         <button>Enviar Inscrição</button>
        
        

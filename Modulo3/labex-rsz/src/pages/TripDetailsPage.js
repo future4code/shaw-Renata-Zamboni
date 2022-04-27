@@ -1,6 +1,7 @@
 import React, {useState, useEffect} from "react";
 import axios from "axios";
 import styled from "styled-components";
+
 import { useNavigate } from "react-router-dom";
 import { goToAdminHomePage } from "../routes/Coordinator";
 
@@ -27,15 +28,18 @@ export function TripDetailsPage() {
 
         <div>
             <h3>Candidatos pendentes</h3>
-            <li>
-                {}
-            </li>
+            <ul>
+                <li>
+                    {}
+                </li>
+            </ul>
 
             <h3>Candidatos aprovados</h3>
-
-            <li>
-                {}
-            </li> 
+            <ul>
+                <li>
+                    {}
+                </li>
+            </ul>
         </div>            
      
     </TripDetailsPageBox>

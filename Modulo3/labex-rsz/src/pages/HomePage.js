@@ -1,9 +1,9 @@
 import React, {useState, useEffect} from "react";
 import axios from "axios";
 import styled from "styled-components";
+
 import { useNavigate } from "react-router-dom";
-import { goToListTripsPage } from "../routes/Coordinator";
-import { goToLoginPage } from "../routes/Coordinator";
+import { goToLoginPage, goToListTripsPage } from "../routes/Coordinator";
 
 const HomePageBox =styled.div`
 `

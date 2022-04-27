@@ -16,7 +16,7 @@ export default function App() {
       <Router/>       
       
         <p>
-          Eita mundo grande sem porteira
+          EITA, MUNDO GRANDE SEM PORTEIRA!
         </p>
        
     </div>
