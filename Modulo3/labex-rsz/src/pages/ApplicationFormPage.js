@@ -29,7 +29,7 @@ export function ApplicationFormPage() {
     const [textoCandidatura, setTextoCandidatura] =  useState("")    
     //const [pais, setPais] = useState([])
     //react country select
-    const [value, setValue] = React.useState(null)      
+    [value, setValue] = React.useState(null)      
    
     
    //useEffect+ axios para GET TRIP
