@@ -12,6 +12,35 @@ const LoginPageBox =styled.div`
 export function LoginPage() {
   const navigate = useNavigate()
 
+  const [email, setEmail]=useState("");
+  const [senha, setSenha]= useState("")
+
+  onChangeEmail =(event)=>{
+    setEmail(event.target.value)
+  }
+
+  onChangeSenha=(event)=>{
+    setSenha(event.target.value)
+  }
+
+  const login =()=>{
+    const body={
+        email:"rnt.zamboni@gmail.com.br",
+        password:"123456,"
+    }
+      
+    console.log(body)
+
+   axios.post(`${urlBase}/login`, body, pathVariables)
+
+  .then((response)=>{
+   setPostApply(response.data.apply);   
+    
+   }).catch((erro)=>{
+        alert(erro.data.response);
+   })
+}  
+
   return (
 
     <LoginPageBox>
@@ -20,8 +49,8 @@ export function LoginPage() {
 
       <h1>Login</h1>
 
-      <input placeholder="e-mail" type="text"/>
-      <input placeholder="e-mail" type="password"/>
+      <input placeholder="e-mail" type="text" onChange={onChangeEmail}/>
+      <input placeholder="e-mail" type="password"onChange={onChangeSenha}/>
 
       <button onClick={()=>goToAdminHomePage(navigate)}>Entrar</button>
 

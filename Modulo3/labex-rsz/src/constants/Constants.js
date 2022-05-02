@@ -7,4 +7,6 @@ export const pathVariables = {
     id: "NoIFVcOiSgTKTIPVZwXS",
 }
 
+export const aluno = "renata-seabra-zamboni-shaw"
+
 

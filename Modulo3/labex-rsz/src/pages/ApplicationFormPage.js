@@ -37,8 +37,8 @@ export function ApplicationFormPage() {
         axios.get(`${urlBase}/trips`)
         .then((response)=>{
             setGetTrip(response.data.trips);   
-        }).catch((err)=>{
-            alert(err.data.response);
+        }).catch((erro)=>{
+            alert(erro.data.response);
         }) 
 
     },[])
@@ -100,8 +100,8 @@ export function ApplicationFormPage() {
       .then((response)=>{
        setPostApply(response.data.apply);
         
-       }).catch((err)=>{
-            alert(err.data.response);
+       }).catch((erro)=>{
+            alert(erro.data.response);
        })
     }  
      
