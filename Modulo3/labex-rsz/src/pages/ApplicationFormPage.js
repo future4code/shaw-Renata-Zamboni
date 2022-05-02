@@ -85,6 +85,7 @@ export function ApplicationFormPage() {
   
     //requisição aplicação formulario
     const applyToTrip =()=>{
+                
         const body={
             name: nome,
             age: idade,
@@ -98,7 +99,7 @@ export function ApplicationFormPage() {
        axios.post(`${urlBase}/trips/${getTrip}/apply`, body, pathVariables)
 
       .then((response)=>{
-       setPostApply(response.data.apply);
+        setPostApply(response.data.apply);
         
        }).catch((erro)=>{
             alert(erro.data.response);
