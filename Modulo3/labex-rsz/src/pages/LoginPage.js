@@ -15,7 +15,7 @@ export function LoginPage() {
 
   const [email, setEmail]=useState("")
   const [senha, setSenha]= useState("")
-  const [login, setLogin]=useState("")
+  //const [login, setLogin]=useState("")
 
   const onChangeEmail =(event)=>{
     setEmail(event.target.value)
@@ -25,10 +25,10 @@ export function LoginPage() {
     setSenha(event.target.value)
   }
 
-  const onClickEntrar =()=>{
+  const login =()=>{
     const body={
-        email:"rnt.zamboni@gmail.com.br",
-        password:"123456,"
+        email: email,
+        password: senha,
     }
       
     console.log(body)
@@ -36,7 +36,7 @@ export function LoginPage() {
    axios.post(`${urlBase}/login`, body, pathVariables)
 
   .then(()=>{
-   setLogin(window.localStorage.setItem("eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Ik9xOW43OE52ejF2aWZSOENEMjZFIiwiZW1haWwiOiJhc3Ryb2RldkBnbWFpbC5jb20uYnIiLCJpYXQiOjE2NTE0OTU0MTF9.y73Ytij0pa60YjR9t_ibunJUCZvZXsee5aCzf8Jdhhk"))
+   window.localStorage.setItem("eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Ik9xOW43OE52ejF2aWZSOENEMjZFIiwiZW1haWwiOiJhc3Ryb2RldkBnbWFpbC5jb20uYnIiLCJpYXQiOjE2NTE0OTU0MTF9.y73Ytij0pa60YjR9t_ibunJUCZvZXsee5aCzf8Jdhhk", response.data.token);
    navigate(goToAdminHomePage)
     
    }).catch((erro)=>{
@@ -55,7 +55,7 @@ export function LoginPage() {
       <input placeholder="e-mail" type="text" onChange={onChangeEmail} value={email}/>
       <input placeholder="e-mail" type="password"onChange={onChangeSenha} value={senha}/>
 
-      <button onClick={()=>onClickEntrar} value ={login}>Entrar</button>
+      <button onClick={()=>login} value ={}>Entrar</button>
 
           
      
