@@ -55,7 +55,7 @@ export function LoginPage() {
       <input placeholder="e-mail" type="text" onChange={onChangeEmail} value={email}/>
       <input placeholder="e-mail" type="password"onChange={onChangeSenha} value={senha}/>
 
-      <button onClick={()=>login} value ={}>Entrar</button>
+      <button onClick={()=>login} value ={""}>Entrar</button>
 
           
      
