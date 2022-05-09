@@ -1,39 +1,48 @@
 import React, {useState, useEffect} from "react";
 import axios from "axios";
 import styled from "styled-components";
+import { useNavigate } from "react-router-dom";
+import { goToAdminHomePage } from "../routes/Coordinator";
 
-const CreateTripPage =styled.div`
+const CreateTripPageBox =styled.div`
 `
 
 
 export function CreateTripPage() {
+  const navigate = useNavigate()
 
   return (
 
-    <CreateTripPage>
+    <CreateTripPageBox>
 
-        <button>Voltar</button>
+      <button onClick={()=> goToAdminHomePage(navigate)}>Voltar</button>
 
-       <h1>Criar Viagem</h1>
+      <h1>Criar Viagem</h1>
 
-       <input placeholder="Nome:" type="text"/>
+      <input placeholder="Nome:" type="text"/><br/>  
 
-       <form>
+      <br/>
+      <form>
+        <label placeholder="Escolha um Planeta">
 
-            <label placeholder="Escolha um Planeta">				
-                <select>
-                    <option value="">Lista de Planetas vinda da... API?</option>						
-                </select>
-            </label>
+          <select>
+            <option value="">Lista de Planetas vinda da... API?</option>						
+          </select>
 
-        </form>
+        </label>
+      </form><br/>
 
-        <input placeholder="Descrição do roteiro" type="text"/>
+      <form>
+          <label>
+            Descrição do roteiro:      
+            <br/><textarea/>
+          </label>
+      </form><br/>
 
-        <input type="date"/>
+      <input type="date"/><br/>
        
-       <button>Criar</button>  
+      <br/><button>Criar</button>  
        
-    </CreateTripPage>
+    </CreateTripPageBox>
   );
 }

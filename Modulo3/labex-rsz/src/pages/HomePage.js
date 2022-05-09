@@ -1,23 +1,29 @@
-import React, {useState, useEffect} from "react";
-import axios from "axios";
+import React from "react";
 import styled from "styled-components";
 
-const HomePage =styled.div`
+import { useNavigate } from "react-router-dom";
+import { goToLoginPage, goToListTripsPage } from "../routes/Coordinator";
+
+const HomePageBox =styled.div`
 `
 
 
 export function HomePage() {
 
+  const navigate=useNavigate()
+
+ 
+
   return (
 
-    <HomePage>
+    <HomePageBox>
 
       <h1>LabeX</h1>
 
-      <button>Ver Viagens</button>
+      <button onClick={()=> goToListTripsPage(navigate)}>Ver Viagens</button>
 
-      <button>Login Equipe</button> 
+      <button onClick={()=> goToLoginPage(navigate)}>Login Equipe</button> 
      
-    </HomePage>
+    </HomePageBox>
   );
 }

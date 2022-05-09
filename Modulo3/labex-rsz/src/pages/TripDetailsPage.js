@@ -2,17 +2,21 @@ import React, {useState, useEffect} from "react";
 import axios from "axios";
 import styled from "styled-components";
 
-const TripDetailsPage =styled.div`
+import { useNavigate } from "react-router-dom";
+import { goToAdminHomePage } from "../routes/Coordinator";
+
+const TripDetailsPageBox =styled.div`
 `
 
 
 export function TripDetailsPage() {
+    const navigate = useNavigate()
 
   return (
 
-    <TripDetailsPage>
+    <TripDetailsPageBox>
 
-        <button>Voltar</button>
+        <button onClick={()=> goToAdminHomePage(navigate)}>Voltar</button>
 
         <div className="CardViagem">
         
@@ -24,17 +28,20 @@ export function TripDetailsPage() {
 
         <div>
             <h3>Candidatos pendentes</h3>
-            <li>
-                {}
-            </li>
+            <ul>
+                <li>
+                    {}
+                </li>
+            </ul>
 
             <h3>Candidatos aprovados</h3>
-
-            <li>
-                {}
-            </li> 
+            <ul>
+                <li>
+                    {}
+                </li>
+            </ul>
         </div>            
      
-    </TripDetailsPage>
+    </TripDetailsPageBox>
   );
 }
