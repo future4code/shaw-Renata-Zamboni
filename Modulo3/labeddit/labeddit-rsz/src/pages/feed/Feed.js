@@ -1,34 +1,39 @@
 import React from "react";
 
-import { GlobalState } from "./global/GlobalState";
-import Router from "./routes/Router";
+import { useNavigate } from "react-router-dom";
+import { vaiParaLogin, vaiParaPost } from "../../routes/Coordinator";
 
 import { Tela2 } from "../../global/GlobalStyles";
 
+import { GlobalContext } from "../../global/GlobalContext";
+
+
 export default function Feed() {
+
+  const navigate = useNavigate()
+
   return (
     <Tela2>
       <p>Feed Tá On</p>
 
       {/* Vai para Login */}
-      <LogOutButton>
-          Logout
-      </LogOutButton>
+      <button onClick={()=>vaiParaLogin(navigate)}>
+        Logout
+      </button>
 
 
        {/* Adiciona item a lista de posts */}
-      <SquareButton>
+       {/* SquareButton */}
+      <button>
           Postar
-      </SquareButton>
+      </button>
 
-      <ListaDePost>
-          
-      </ListaDePost>
+      <div className="ListaDePost">
+          retorna array com a lista de posts
+      </div>
 
       {/* Vai para post */}
-      <ComentButton>
-      
-      </ComentButton>   
+      <button onClick={()=>vaiParaPost(navigate)}>Comentario</button>  
     </Tela2>
   );
 }

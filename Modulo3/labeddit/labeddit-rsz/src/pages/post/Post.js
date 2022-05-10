@@ -1,20 +1,34 @@
 import React from "react";
 
-import { GlobalState } from "./global/GlobalState";
-import Router from "./routes/Router";
+import { useNavigate } from "react-router-dom";
 
-import { Tela2 } from "../../global/GlobalStyles";
+import { Header, Tela2 } from "../../global/GlobalStyles";
+import { vaiParaFeed, vaiParaLogin } from "../../routes/Coordinator";
+
+import { GlobalContext } from "../../global/GlobalContext";
 
 export default function Post() {
+
+  const navigate = useNavigate()
   return (
     <Tela2>
-      <p>Post Tá On</p>
+      <Header>
+        {/* Vai para feed */}
+        <button onClick={()=>vaiParaFeed(navigate)}>X</button>
+        {/* Vai para login */}
+        <button onClick={()=>vaiParaLogin(navigate)}>Logout</button>
+      </Header>
+
+      {/* input comentario */}
+
+      {/* lista de comentarios do post */}
 
 
       {/* Soma ao numero de comentarios */}
-      <SquareButton>
-          Responder
-      </SquareButton>     
+      {/* SquareButton */}
+      <button>
+        Responder
+      </button>     
     </Tela2>
   );
 }

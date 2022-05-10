@@ -30,20 +30,90 @@ export const Titulo = styled.div`
 font-family: 'IBM Plex Sans';
 font-style: normal;
 font-weight: 700;
-font-size: 33px;
-line-height: 43px;
+font-size: 36px;
+line-height: 47px;
 color: #373737;
+`
+//Logo
+export const Logo = styled.img`
+position: absolute;
+width: 84px;
+height: 84.02px;
+left: 167px;
+top: 133px;
 `
 
 //Header
+export const Header=styled.div`
+`
 
-//InputCadastro
+//Inputs Cadastro
+export const Input=styled.div`
+box-sizing: border-box;
+background: #FFFFFF;
+border: 1px solid #D5D8DE;
+border-radius: 4px;
+font-family: 'Noto Sans';
+font-style: normal;
+font-weight: 400;
+font-size: 16px;
+line-height: 22px;
+`
+
 
 //RoundButton
+export const RoundButton = styled.div`display: flex;
+flex-direction: row;
+justify-content: center;
+align-items: center;
+padding: 13px 133px;
+gap: 10px;
+position: absolute;
+width: 365px;
+height: 51px;
+background: linear-gradient(90deg, #FF6489 0%, #F9B24E 100%);
+border-radius: 27px;
+font-family: 'Noto Sans';
+font-style: normal;
+font-weight: 700;
+font-size: 18px;
+line-height: 25px;
+text-align: center;
+color: #FFFFFF;
+`
 
-//RoundButton2
+//RoundWhiteButton
+export const RoundWhiteButton = styled.div`
+box-sizing: border-box;
+display: flex;
+flex-direction: row;
+justify-content: center;
+align-items: center;
+padding: 13px 133px;
+gap: 10px;
+position: absolute;
+width: 365px;
+height: 51px;
+left: 29px;
+top: 676px;
+border: 1px solid #FE7E02;
+border-radius: 27px;
 
-//InputPost
+width: 142px;
+height: 25px;
+font-family: 'Noto Sans';
+font-style: normal;
+font-weight: 700;
+font-size: 18px;
+line-height: 25px;
+text-align: center;
+color: #FE7E02;
+flex: none;
+order: 0;
+flex-grow: 0;
+`
+
+//Post
 
 //SquareButton
 
@@ -51,7 +121,7 @@ color: #373737;
 
 //DislikeButton
 
-//ComentButton
+//CommentButton
 
 //LogOutButton
 

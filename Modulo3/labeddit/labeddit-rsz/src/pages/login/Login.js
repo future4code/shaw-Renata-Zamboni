@@ -1,28 +1,41 @@
 import React from "react";
 
-import { GlobalState } from "./global/GlobalState";
-import Router from "./routes/Router";
+import { GlobalContext } from "../../global/GlobalContext";
 
-import { Tela, Titulo } from "../../global/GlobalStyles";
+import {useNavigate, useParams} from "react-router-dom";
+
+
+import { Input, Logo, RoundButton, RoundWhiteButton, Tela, Titulo } from "../../global/GlobalStyles";
+import ReLogo from "../../assets/RêEddit_Logo.jpg"
+import { LogoTitulo, RoundButtonPosition, Subtitulo } from "./StyledLogin";
+import { vaiParaCadastro, vaiParaFeed } from "../../routes/Coordinator";
 
 export default function Login() {
+
+  const navigate = useNavigate();
+
   return (
     <Tela>
-      <Titulo>RêEddit</Titulo>      
+      <LogoTitulo>
+        <Logo src={ReLogo}/>
+        <Titulo>RêEddit</Titulo>
+      </LogoTitulo>      
       <Subtitulo>O fórum dos fóruns</Subtitulo>
 
-      <input type="text" placeholder="Nome"/>
-      <input type="password" placeholder="Senha"/>
+      <Input type="text" placeholder="Nome"/>
+      <Input type="password" placeholder="Senha"/>
 
       {/* Vai para Feed */}
-      <RoundButton>
+      <RoundButtonPosition>
+        <RoundButton onClick={()=> vaiParaFeed(navigate)}>
           Continuar
-      </RoundButton>
+        </RoundButton>
+      </RoundButtonPosition>
 
       {/* Vai para Cadastro */}
-      <RoundButton2>
+      <RoundWhiteButton onClick={()=>vaiParaCadastro(navigate)}>
           Crie uma conta!
-      </RoundButton2>    
+      </RoundWhiteButton>    
     </Tela>
   );
 }
