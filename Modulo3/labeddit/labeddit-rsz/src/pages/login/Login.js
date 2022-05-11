@@ -2,40 +2,63 @@ import React from "react";
 
 import { GlobalContext } from "../../global/GlobalContext";
 
-import {useNavigate, useParams} from "react-router-dom";
-
+import {useNavigate} from "react-router-dom";
+import { vaiParaCadastro, vaiParaFeed } from "../../routes/Coordinator";
 
 import { Input, Logo, RoundButton, RoundWhiteButton, Tela, Titulo } from "../../global/GlobalStyles";
-import ReLogo from "../../assets/RêEddit_Logo.jpg"
+import ReLogo from "../../assets/RêEddit_Logo.jpg";
 import { LogoTitulo, RoundButtonPosition, Subtitulo } from "./StyledLogin";
-import { vaiParaCadastro, vaiParaFeed } from "../../routes/Coordinator";
+
+import useForm from "../../hooks/useForm";
+import { LoginFunction } from "../../services/LoginFunction";
 
 export default function Login() {
 
-  const navigate = useNavigate();
+  const [form, handleInputChange]=useForm({email:"", password:""})
+
+  const onSubmit=(event)=>{
+    event.preventDefault()
+    LoginFunction(form, navigate)
+  }
+
+  const navigate = useNavigate()
 
   return (
     <Tela>
-      <LogoTitulo>
+      <div>
+      
         <Logo src={ReLogo}/>
-        <Titulo>RêEddit</Titulo>
-      </LogoTitulo>      
-      <Subtitulo>O fórum dos fóruns</Subtitulo>
+        <h1>RêEddit</h1>
+        <h3>O Fórum</h3>
+     
+      </div>
 
-      <Input type="text" placeholder="Nome"/>
-      <Input type="password" placeholder="Senha"/>
+      <form onSubmit={onSubmit}>    
 
-      {/* Vai para Feed */}
-      <RoundButtonPosition>
-        <RoundButton onClick={()=> vaiParaFeed(navigate)}>
-          Continuar
-        </RoundButton>
-      </RoundButtonPosition>
+        <input type="text" placeholder="E-mail"
+        name={"email"}
+        value={form.email}
+        onChange={handleInputChange}/>
+        <br/><br/>
 
-      {/* Vai para Cadastro */}
-      <RoundWhiteButton onClick={()=>vaiParaCadastro(navigate)}>
-          Crie uma conta!
-      </RoundWhiteButton>    
+        <input type="password" placeholder="Senha"
+        name="password"
+        value={form.password}
+        onChange={handleInputChange}/>
+        <br/><br/>
+
+        {/* <RoundButtonPosition> / onClick={()=> vaiParaFeed(navigate)}*/}
+          <button type="submit">
+            Continuar
+          </button>
+        {/* </RoundButtonPosition> */}        
+      </form>
+      <br/><br/>
+
+      <button onClick={()=>vaiParaCadastro(navigate)}>
+        Crie uma conta!
+      </button>
+        
     </Tela>
   );
 }

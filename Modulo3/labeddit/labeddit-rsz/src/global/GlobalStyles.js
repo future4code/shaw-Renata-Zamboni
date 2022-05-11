@@ -4,12 +4,10 @@ import styled from "styled-components";
 export const Tela = styled.div`
 height: 926px;
 width: 428px;
-left: -406px;
-top: -464px;
+left: 406px;
+top: 200px;
 border-radius: 0px;
-position: relative;
-width: 428px;
-height: 926px;
+position:relative;
 background-color: #FFFFFF;
 `
 
@@ -18,11 +16,9 @@ export const Tela2 = styled.div`
 height: 1080px;
 width: 428px;
 left: 540px;
-top: -464px;
+top: 464px;
 border-radius: 0px;
 position: relative;
-width: 428px;
-height: 1080px;
 background-color: #FFFFFF;
 `
 //Título
@@ -36,9 +32,9 @@ color: #373737;
 `
 //Logo
 export const Logo = styled.img`
-position: absolute;
-width: 84px;
-height: 84.02px;
+position: initial;
+width: 90px;
+height: 90px;
 left: 167px;
 top: 133px;
 `

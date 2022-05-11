@@ -11,7 +11,7 @@ export default function Post() {
 
   const navigate = useNavigate()
   return (
-    <Tela2>
+    <div className="Tela2">
       <Header>
         {/* Vai para feed */}
         <button onClick={()=>vaiParaFeed(navigate)}>X</button>
@@ -19,16 +19,10 @@ export default function Post() {
         <button onClick={()=>vaiParaLogin(navigate)}>Logout</button>
       </Header>
 
-      {/* input comentario */}
+      {/* <cardPost/> */}
+     
+      {/* lista de comentarios do post: endpoint get post coments */}
 
-      {/* lista de comentarios do post */}
-
-
-      {/* Soma ao numero de comentarios */}
-      {/* SquareButton */}
-      <button>
-        Responder
-      </button>     
-    </Tela2>
+    </div>
   );
 }
