@@ -11,17 +11,18 @@ import { LogoTitulo, RoundButtonPosition, Subtitulo } from "./StyledLogin";
 
 import useForm from "../../hooks/useForm";
 import { LoginFunction } from "../../services/LoginFunction";
+import useUnprotectedPage from "../../hooks/useUnprotectedPage";
 
 export default function Login() {
+  useUnprotectedPage()
+  const navigate = useNavigate()
 
-  const [form, handleInputChange]=useForm({email:"", password:""})
+  const [form, clear, handleInputChange]=useForm({email:"", password:""})
 
   const onSubmit=(event)=>{
     event.preventDefault()
-    LoginFunction(form, navigate)
-  }
-
-  const navigate = useNavigate()
+    LoginFunction(form, clear, navigate)
+  }  
 
   return (
     <Tela>
@@ -36,12 +37,14 @@ export default function Login() {
       <form onSubmit={onSubmit}>    
 
         <input type="text" placeholder="E-mail"
+        required        
         name={"email"}
         value={form.email}
         onChange={handleInputChange}/>
         <br/><br/>
 
         <input type="password" placeholder="Senha"
+        required        
         name="password"
         value={form.password}
         onChange={handleInputChange}/>

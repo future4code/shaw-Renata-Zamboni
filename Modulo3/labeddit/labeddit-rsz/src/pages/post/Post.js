@@ -6,10 +6,13 @@ import { Header, Tela2 } from "../../global/GlobalStyles";
 import { vaiParaFeed, vaiParaLogin } from "../../routes/Coordinator";
 
 import { GlobalContext } from "../../global/GlobalContext";
+import useProtectedPage from "../../hooks/useProtectedPage";
 
 export default function Post() {
-
+  
+  useProtectedPage()
   const navigate = useNavigate()
+  
   return (
     <div className="Tela2">
       <Header>

@@ -6,10 +6,12 @@ import { vaiParaLogin, vaiParaPost } from "../../routes/Coordinator";
 import { Header, Tela2 } from "../../global/GlobalStyles";
 
 import { GlobalContext } from "../../global/GlobalContext";
+import useProtectedPage from "../../hooks/useProtectedPage";
 
 
 export default function Feed() {
 
+  useProtectedPage()
   const navigate = useNavigate()
 
   return (
