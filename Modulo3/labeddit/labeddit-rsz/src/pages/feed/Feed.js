@@ -3,10 +3,11 @@ import React from "react";
 import { useNavigate } from "react-router-dom";
 import { vaiParaLogin, vaiParaPost } from "../../routes/Coordinator";
 
-import { Header, Tela2 } from "../../global/GlobalStyles";
+import { Tela2 } from "../../global/GlobalStyles";
 
 import { GlobalContext } from "../../global/GlobalContext";
 import useProtectedPage from "../../hooks/useProtectedPage";
+import { HeaderButton } from "../../components/header/StyledHeader";
 
 
 export default function Feed() {
@@ -16,9 +17,9 @@ export default function Feed() {
 
   return (
     <div className="Tela2">
-      <Header>  
-        <button onClick={()=>vaiParaLogin(navigate)}>Logout</button>
-      </Header>
+      <div className="Header">  
+        <HeaderButton onClick={()=>vaiParaLogin(navigate)}>Logout</HeaderButton>
+      </div>
 
       {/* <cardFeed/> */}
 

@@ -2,11 +2,12 @@ import React from "react";
 
 import { useNavigate } from "react-router-dom";
 
-import { Header, Tela2 } from "../../global/GlobalStyles";
+import { Tela2 } from "../../global/GlobalStyles";
 import { vaiParaFeed, vaiParaLogin } from "../../routes/Coordinator";
 
 import { GlobalContext } from "../../global/GlobalContext";
 import useProtectedPage from "../../hooks/useProtectedPage";
+import { HeaderButton } from "../../components/header/StyledHeader";
 
 export default function Post() {
   
@@ -15,12 +16,12 @@ export default function Post() {
   
   return (
     <div className="Tela2">
-      <Header>
+      <div className="Header">
         {/* Vai para feed */}
         <button onClick={()=>vaiParaFeed(navigate)}>X</button>
         {/* Vai para login */}
-        <button onClick={()=>vaiParaLogin(navigate)}>Logout</button>
-      </Header>
+        <HeaderButton onClick={()=>vaiParaLogin(navigate)}>Logout</HeaderButton>
+      </div>
 
       {/* <cardPost/> */}
      

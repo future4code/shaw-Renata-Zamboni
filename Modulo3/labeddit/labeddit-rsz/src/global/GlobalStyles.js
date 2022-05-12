@@ -39,10 +39,6 @@ left: 167px;
 top: 133px;
 `
 
-//Header
-export const Header=styled.div`
-`
-
 //Inputs Cadastro
 export const Input=styled.div`
 box-sizing: border-box;
