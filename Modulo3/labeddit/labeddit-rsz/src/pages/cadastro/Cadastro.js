@@ -10,16 +10,14 @@ import SignupForm from "./SignupForm";
 import Header from "../../components/header/Header";
 import { HeaderButton } from "../../components/header/StyledHeader";
 
-
-
-export default function Cadastro() {
+const Cadastro=(props)=> {
   useUnprotectedPage()
   const navigate = useNavigate()   
 
   return (
-    <Tela>      
+    <Tela>
+      <Header/>
       
-      {/* <HeaderButton onClick={()=> vaiParaLogin(navigate)}>Entrar</HeaderButton> */}
             
       <h1>Chega junto! ;)</h1>
       <SignupForm/>     
@@ -27,3 +25,5 @@ export default function Cadastro() {
     </Tela>
   );
 }
+
+export default Cadastro;

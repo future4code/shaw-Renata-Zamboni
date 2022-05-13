@@ -37,10 +37,8 @@ export default function SignupForm() {
                 <p>Senha deve possuir no mínimo 8 e no máximo 30 caracteres</p>
                 <p><strong>Me comprometo em ser legal.</strong></p>
                 <br/>        
-                {/* RoundButton / onClick={()=>vaiParaFeed(navigate)}*/}
-                < button type={"submit"}>
-                Cadastrar
-                </button>
+                
+                < button type={"submit"}>Cadastrar</button>
             </form>
         </div>
     );

@@ -30,10 +30,8 @@ export default function LoginForm() {
             onChange={handleInputChange}/>
             <br/><br/>
 
-            {/* <RoundButtonPosition> / onClick={()=> vaiParaFeed(navigate)}*/}
-            <button type={"submit"}>
-                Continuar
-            </button>
+            {/* <RoundButtonPosition> */}
+            <button type={"submit"}>Continuar</button>
             {/* </RoundButtonPosition> */}        
             </form>
         </div>
