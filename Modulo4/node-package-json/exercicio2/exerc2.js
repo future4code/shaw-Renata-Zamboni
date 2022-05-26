@@ -1,0 +1,1 @@
+const conta = Number(process.argv[2])
