@@ -9,3 +9,5 @@ console.log(`Olá, ${meuNome}! Você tem ${minhaIdade} anos.`)
 
 //c)
 console.log(`Olá, ${meuNome}! Você tem ${minhaIdade} anos. Em sete anos você terá ${somaSete}.`)
+
+

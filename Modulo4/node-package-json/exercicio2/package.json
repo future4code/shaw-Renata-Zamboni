@@ -1,0 +1,13 @@
+{
+    "name": "aula-node",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+      "start": "node ./index.js",      
+      "exerc2": "clear && node ./exercicio2/exerc2.js"
+    },
+    "keywords": [],
+    "author": "Renata Zamboni",
+    "license": "ISC"
+  }
