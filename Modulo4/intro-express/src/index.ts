@@ -1,4 +1,4 @@
-import express, {application, Express} from 'express';
+import express, {application, Express, Request, Response} from 'express';
 import cors from 'cors';
 import { AddressInfo } from "net";
 import { users } from './userData';
@@ -23,26 +23,27 @@ app.get("/", (req, res) => {
 // })
 
 //criar uma variavel de tipo
-type UserInfo = {
+export type UserData = {
    id: number,
    name: string,
    phone: number | string,
-   email: any,
-   website: any
+   email: string,
+   website: string
 }
 
-//3 array de usuarios em data.ts
+//3 array de usuarios em userData.ts
 
 //4
-app.get("/users", (req, res)=>{
-   const myUsers = users.map((user)=>{
-      return users
-   })
-   res.send(myUsers)
+app.get("/users", (req, res) =>{  
+   if (users.length <0){
+      res.status(201).send(users)
+   }else{
+      res.status(401).send("Usuários não encontrados.")
+   }  
 })
 
 //5
-type Posts = {
+export type Post = {
    userId: number,
    id: number,
    title: string,
@@ -50,29 +51,29 @@ type Posts = {
 }
 
 //6 array de posts em postData.ts
-//achei melhor criar fora do array de usuários pra 1. separar as infos por categoria, 2. não fazer um "inception" de arrays de objetos
+//Achei melhor criar fora do array de usuários pra 1. separar as infos por categoria, 2. não fazer um "inception" de arrays de objetos
 
 //7
 app.get("/posts", (req, res)=>{
-   const postList = posts.filter((post)=>{
-      return posts
-   })
-   res.send(postList)
+   if (posts.length <0){
+      res.status(201).send(posts)
+   }else{
+      res.status(401).send("Postagens não encontradas")
+   }  
 })
 
-//8 aaaaaah sos
-// app.get("posts/:userId",(req, res)=>{
-//    const postId = req.params.postId;
+//8 aaaaaah sos... corrigido.
+app.get("posts/:userId",(req: Request, res: Response)=>{
+   const userId = Number(req.params.userId)
 
-//    const getUserPost = posts.filter((post)=>{
-//       if (post.id === postId){
-//             return post
-//          }
-//       })      
-   
-//    res.send(getUserPost)
-// })
-
+   const getUserPost = posts.filter((post)=>{
+      if (post.userId === userId){
+         
+         res.status(201).send(getUserPost) 
+      }
+   })      
+         
+})
 
 const server = app.listen(process.env.PORT || 3003, () => {
     if (server) {

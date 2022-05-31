@@ -1,4 +1,6 @@
-export const users = [
+import { UserData } from "./index";
+
+export const users: UserData[] = [
     {
         id: 1,
         name: "Leanne Graham",
