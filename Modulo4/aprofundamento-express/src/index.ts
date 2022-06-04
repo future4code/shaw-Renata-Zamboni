@@ -51,11 +51,15 @@ app.get("/tarefas/title/:completed", (req: Request, res: Response)=>{
     res.status(200).send(listaTarefaConcluida)    
 })
 
-//5 add tarefa
+//5 add tarefa = post playlist
 
 app.post("/adicionarTarefa", (req, res)=>{
     // const novaTarefa: ToDo[] = req.body
     const {userId, id, title, completed}: ToDo = req.body
+
+    const listaTarefas = tarefas.map((tarefa)=>{
+        return tarefa.title;
+    })
     
     const novaTarefa ={
         userId,
@@ -64,7 +68,7 @@ app.post("/adicionarTarefa", (req, res)=>{
         completed
     }
 
-    tarefas.push(novaTarefa)
+    listaTarefas?.tarefa.push(novaTarefa)
     res.status(201).send(tarefas)    
 })
 
