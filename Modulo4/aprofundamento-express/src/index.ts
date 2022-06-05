@@ -2,6 +2,7 @@ import express, { Request, Response } from "express";
 import cors from "cors";
 import { AddressInfo } from "net";
 import { tarefas, ToDo } from "./tarefas";
+import { addAbortSignal } from "stream";
 
 
 const app = express();
@@ -52,25 +53,60 @@ app.get("/tarefas/title/:completed", (req: Request, res: Response)=>{
 })
 
 //5 add tarefa = post playlist
-
 app.post("/adicionarTarefa", (req, res)=>{
-    // const novaTarefa: ToDo[] = req.body
-    const {userId, id, title, completed}: ToDo = req.body
+    const {userId, title} = req.body 
 
-    const listaTarefas = tarefas.map((tarefa)=>{
-        return tarefa.title;
-    })
+    // const listaTarefas = tarefas.map((tarefa)=>{
+    //     return tarefa.title;
+    // })
     
-    const novaTarefa ={
+    const novaTarefa: ToDo ={
         userId,
-        id,
+        id: Date.now(),
         title,
-        completed
+        completed: false,
     }
 
-    listaTarefas?.tarefa.push(novaTarefa)
+    tarefas.push(novaTarefa)
     res.status(201).send(tarefas)    
 })
+
+//6 editar afazer - completo > incompleto = delete playlist?
+app.put("/editarTarefa/:completed", (req, res)=>{  
+    let statusTarefa = req.params.completed
+      
+    const atualizaTarefa = tarefas.map((tarefa)=>{
+        if (tarefa.completed === true ){
+            return{
+                ...tarefa,                        
+                completed: !statusTarefa
+            }
+        }else{
+            return tarefa;
+        }             
+    })
+    res.status(201).send(atualizaTarefa)   
+})
+
+//7 delete tarefa by id = delete track
+app.delete("/tarefas/:idTarefa", (req,res)=>{
+    const idTarefa = Number(req.params.idTarefa);
+
+    const apagaTarefa = tarefas.map((tarefa)=>{
+        if (tarefa.id === idTarefa){
+            return{
+                tarefa:[]
+            }
+        }else{
+            return tarefa
+        }
+    })
+    res.status(201).send(apagaTarefa) 
+})
+
+//8
+
+
 
 
 const server = app.listen(process.env.PORT || 3003, () => {
