@@ -1,3 +1,11 @@
+CREATE TABLE Actor(
+    id VARCHAR(255) PRIMARY KEY,
+    name VARCHAR(255) NOT NULL,
+    salary FLOAT NOT NULL,
+    birth_date DATE NOT NULL,
+    gender VARCHAR(6) NOT NULL
+);
+
 ### Exercício 1
 a)
 VARCHAR: é uma string e 
@@ -41,7 +49,51 @@ WHERE gender = "female";
 b)
 SELECT salary from Actor
 WHERE name = "Tony Ramos";
+
+c)
+Todos os campos retornaram Null já que não há ator/atriz sem definição de genero, além do campo "genero" não aceitar valor nulo.
+
+d)
+SELECT id, name, salary
+FROM Actor
+WHERE salary <500000;
+
+e)"Error Code: 1054. Coluna 'nome' desconhecida no campo de lista.
+Não há campo "nOme", mas sim "nAme". Precisamos chamar da mesma forma.
+Chamada correta: SELECT id, name from Actor WHERE id = "002";
+
+
 ### Exercício 4
+a)
+
+b)
+
+c)
+
+d)
+
 ### Exercício 5
+a)
+
+b)
+
+c)
+
+d)
+
+e)
 ### Exercício 6
+a)
+
+b)
+
+c)
+
 ### Exercício 7
+a)
+
+b)
+
+c)
+
+d)
