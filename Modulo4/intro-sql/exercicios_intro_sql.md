@@ -62,38 +62,125 @@ e)"Error Code: 1054. Coluna 'nome' desconhecida no campo de lista.
 Não há campo "nOme", mas sim "nAme". Precisamos chamar da mesma forma.
 Chamada correta: SELECT id, name from Actor WHERE id = "002";
 
-
 ### Exercício 4
-a)
+a) A query 
+SELECT * FROM Actor
+WHERE (name LIKE "A%" OR name LIKE "J%") AND salary > 300000
+nos pernite consultar diversos valores de uma só vez por meio da combinação de e parametros e operadores lógicos.
 
 b)
+SELECT * FROM Actor
+WHERE name NOT LIKE "A%" AND salary > 350000;
 
 c)
+SELECT * FROM Actor
+WHERE name LIKE "%g%" OR name LIKE "%G%";
 
 d)
+SELECT * FROM Actor
+WHERE name (LIKE "%g%" OR name LIKE "%G%" OR name LIKE "%a%" or name LIKE "%A%") AND salary BETWEEN 350000 AND 900000;
 
 ### Exercício 5
 a)
+CREATE TABLE Film(
+  id VARCHAR(255) PRIMARY KEY,
+  name VARCHAR(255) NOT NULL,
+  sinopse TEXT NOT NULL,
+  release_date DATE NOT NULL,
+  rate INT NOT NULL   
+);
 
 b)
+INSERT INTO Film (id, name, sinopse, release_date, rate)
+VALUES(
+"001",
+"Se Eu Fosse Você",
+"Cláudio e Helena são casados há muitos anos e enfrentam a rotina do casamento.
+Um dia eles são atingidos por um fenômeno inexplicável e trocam de corpos",
+"2006-01-06",
+7
+);
 
 c)
+INSERT INTO Film (id, name, sinopse, release_date, rate)
+VALUES(
+"002",
+"Doce de mãe",
+"Dona Picucha, uma animada senhora de 85 anos, sempre causa grandes confusões.
+A vida dela e dos seus quatro filhos sofre uma reviravolta depois que Zaida,
+empregada e amiga de Dona Picucha, anuncia que vai se casar e não poderá mais morar com ela",
+"2012-12-27",
+10
+);
 
 d)
+INSERT INTO Film (id, name, sinopse, release_date, rate)
+VALUES(
+"003",
+"Dona Flor e Seus Dois Maridos",
+"Dona Flor é uma sedutora professora de culinária casada com Vadinho,
+que só quer saber de farras e jogatina nas boates.
+A vida de abusos acaba por acarretar sua morte precoce.",
+"2017-11-02",
+8
+);
 
 e)
+INSERT INTO Film (id, name, sinopse, release_date, rate)
+VALUES(
+"004",
+"Narradores de Javé",
+"A população analfabeta da pequena cidade de Javé
+encarrega Antônio Biá com a missão de escrever a história da cidade,
+numa tentativa de impedir a construção de uma represa hidrelétrica que destruiria a vila.
+Eles começam a lembrar (ou a maquiar) grandes personalidades e eventos locais.",
+"2004-01-23",
+8
+);
+
 ### Exercício 6
 a)
+SELECT id, name, rate
+FROM Film
+WHERE id = "004";
 
 b)
+SELECT * FROM Film
+WHERE name = "Narradores de Javé";
 
 c)
+SELECT id, name, sinopse
+FROM Film
+WHERE rate >7;
+
 
 ### Exercício 7
 a)
+SELECT * FROM Film
+WHERE name LIKE "%vida%";
 
 b)
+SELECT * FROM Film
+WHERE name LIKE "%eu%" OR sinopse LIKE "%eu%";
 
 c)
+SELECT * FROM Film
+WHERE release_date < "2020-05-10";
 
 d)
+SELECT * FROM Film
+WHERE 
+release_date < "2020-05-10"
+AND name LIKE "%eu%" OR sinopse LIKE "%eu%"
+AND rate >7;
+
+OU
+
+SELECT * FROM Film
+WHERE 
+release_date < CURDATE()
+AND name LIKE "%eu%" OR sinopse LIKE "%eu%"
+AND rate >7;
+
+OBS.: Da forma como está sugerida nas dicas só retorna uma linha com valores nulos.
+
