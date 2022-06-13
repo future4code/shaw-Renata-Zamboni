@@ -1,5 +1,5 @@
 ### Exercício 1
-a)
+a) Excluiria a coluna de salario da 
 b)
 c)
 d)
