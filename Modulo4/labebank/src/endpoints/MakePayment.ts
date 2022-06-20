@@ -1,0 +1,1 @@
+//DELETE - retira $ do array de add balance
